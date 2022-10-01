@@ -1,0 +1,42 @@
+{
+  "name": "next-amazona",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.4",
+    "@mui/material": "^5.0.4",
+    "@mui/styles": "^5.0.1",
+    "@paypal/react-paypal-js": "^7.4.2",
+    "@react-google-maps/api": "^2.5.0",
+    "axios": "^0.23.0",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^3.6.0",
+    "cloudinary": "^1.27.1",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "6.5.2",
+    "multer": "^1.4.3",
+    "next": "^11.1.2",
+    "next-connect": "^0.11.0",
+    "notistack": "^2.0.2",
+    "react": "^17.0.2",
+    "react-chartjs-2": "^3.2.0",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.17.5",
+    "react-responsive-carousel": "^3.2.22",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "7.29.0",
+    "eslint-config-next": "11.1.2"
+  }
+}
