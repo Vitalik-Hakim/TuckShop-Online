@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import db from "../utils/db";
 import Product from "../models/Product";
 import axios from "axios";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useContext } from "react";
 import { Store } from "../utils/Store";
 import ProductItem from "../components/ProductItem";
@@ -13,7 +13,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classes from "../utils/classes";
 
 export default function Home(props) {
-  const router = useRouter();
+  // const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { topRatedProducts, featuredProducts, Instock } = props;
   const addToCartHandler = async (product) => {
@@ -25,7 +25,7 @@ export default function Home(props) {
       return;
     }
     dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
-    router.push("/cart");
+    // router.push("/");
   };
   return (
     <Layout>
@@ -89,7 +89,7 @@ export async function getServerSideProps() {
     "-reviews"
   )
     .lean()
-    .limit(3);
+    .limit(1);
   const topRatedProductsDocs = await Product.find({}, "-reviews")
     .lean()
     .sort({

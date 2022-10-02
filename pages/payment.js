@@ -25,7 +25,7 @@ export default function Payment() {
   const {
     cart: { shippingAddress },
   } = state;
-  const [radioDisabled, setRadioDisabled] = React.useState(false);
+  // const [radioDisabled, setRadioDisabled] = React.useState(false);
   useEffect(() => {
     if (!shippingAddress.address) {
       router.push("/shipping");
@@ -71,8 +71,8 @@ export default function Payment() {
                   control={<Radio />}
                 ></FormControlLabel>
                 <FormControlLabel
-                  label="Ujama Pay(Coming Soon)"
-                  value="Ujama Pay"
+                  label="Ujamaa Pay(Coming Soon)"
+                  value="Ujamaa Pay"
                   disabled={true}
                   control={<Radio />}
                 ></FormControlLabel>

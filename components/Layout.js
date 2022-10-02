@@ -140,7 +140,7 @@ export default function Layout({ title, description, children }) {
   return (
     <>
       <Head>
-        <title>{title ? `${title} - Ujama` : "Ujama"}</title>
+        <title>{title ? `${title} - Ujamaa` : "Ujamaa"}</title>
         {description && <meta name="description" content={description}></meta>}
       </Head>
       <ThemeProvider theme={theme}>
@@ -158,7 +158,7 @@ export default function Layout({ title, description, children }) {
               </IconButton>
               <NextLink href="/" passHref>
                 <Link>
-                  <Typography sx={classes.brand}>Ujama</Typography>
+                  <Typography sx={classes.brand}>Ujamaa</Typography>
                 </Link>
               </NextLink>
             </Box>
@@ -174,7 +174,7 @@ export default function Layout({ title, description, children }) {
                     alignItems="center"
                     justifyContent="space-between"
                   >
-                    <Typography>Shopping by category</Typography>
+                    <Typography>Shopping by Category</Typography>
                     <IconButton
                       aria-label="close"
                       onClick={sidebarCloseHandler}

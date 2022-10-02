@@ -18,8 +18,6 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  Switch,
-  Alert,
 } from "@mui/material";
 import { getError } from "../../utils/error";
 import { Store } from "../../utils/Store";

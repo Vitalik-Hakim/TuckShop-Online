@@ -18,7 +18,7 @@ import classes from "../utils/classes";
 import ProductItem from "../components/ProductItem";
 import { Store } from "../utils/Store";
 import axios from "axios";
-import Rating from "@mui/material/Rating";
+// import Rating from "@mui/material/Rating";
 import { Pagination } from "@mui/material";
 
 const PAGE_SIZE = 3;
@@ -38,7 +38,7 @@ const prices = [
   },
 ];
 
-const ratings = [1, 2, 3, 4, 5];
+// const ratings = [1, 2, 3, 4, 5];
 
 export default function Search(props) {
   const router = useRouter();
@@ -96,9 +96,9 @@ export default function Search(props) {
   const priceHandler = (e) => {
     filterSearch({ price: e.target.value });
   };
-  const ratingHandler = (e) => {
-    filterSearch({ rating: e.target.value });
-  };
+  // const ratingHandler = (e) => {
+  //   filterSearch({ rating: e.target.value });
+  // };
 
   const { state, dispatch } = useContext(Store);
   const addToCartHandler = async (product) => {
@@ -158,7 +158,7 @@ export default function Search(props) {
                 </Select>
               </Box>
             </ListItem>
-            <ListItem>
+            {/* <ListItem>
               <Box sx={classes.fullWidth}>
                 <Typography>Ratings</Typography>
                 <Select value={rating} onChange={ratingHandler} fullWidth>
@@ -171,7 +171,7 @@ export default function Search(props) {
                   ))}
                 </Select>
               </Box>
-            </ListItem>
+            </ListItem> */}
           </List>
         </Grid>
         <Grid item md={9}>
@@ -182,7 +182,7 @@ export default function Search(props) {
               {category !== "all" && " : " + category}
               {brand !== "all" && " : " + brand}
               {price !== "all" && " : Price " + price}
-              {rating !== "all" && " : Rating " + rating + " & up"}
+              {/* {rating !== "all" && " : Rating " + rating + " & up"} */}
               {(query !== "all" && query !== "") ||
               category !== "all" ||
               brand !== "all" ||
