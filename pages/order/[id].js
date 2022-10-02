@@ -26,7 +26,7 @@ import { useRouter } from 'next/router';
 import classes from '../../utils/classes';
 import { useSnackbar } from 'notistack';
 import { getError } from '../../utils/error';
-import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
+import { usePayPalScriptReducer } from '@paypal/react-paypal-js';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -355,7 +355,7 @@ function Order({ params }) {
                     </Grid>
                   </Grid>
                 </ListItem>
-                {!isPaid && (
+                {/* {!isPaid && (
                   <ListItem>
                     {isPending ? (
                       <CircularProgress />
@@ -369,7 +369,7 @@ function Order({ params }) {
                       </Box>
                     )}
                   </ListItem>
-                )}
+                )} */}
                 {userInfo.isAdmin && !order.isPaid && !order.isDelivered && (
                   <ListItem>
                     {loadingDeliver && <CircularProgress />}
