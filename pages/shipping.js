@@ -132,8 +132,8 @@ export default function Shipping() {
                   helperText={
                     errors.address
                       ? errors.address.type === "minLength"
-                        ? "Address length is more than 1"
-                        : "Address is required"
+                        ? "Hostel Name length is more than 1"
+                        : "Please Fill in the field"
                       : ""
                   }
                   {...field}
@@ -159,9 +159,9 @@ export default function Shipping() {
                   error={Boolean(errors.city)}
                   helperText={
                     errors.city
-                      ? errors.city.type === "minLength"
-                        ? "City length is more than 1"
-                        : "City is required"
+                      ? errors.city.type === "0"
+                        ? "Room Number is Required"
+                        : "Room Number is Required"
                       : ""
                   }
                   {...field}
@@ -188,8 +188,8 @@ export default function Shipping() {
                   helperText={
                     errors.postalCode
                       ? errors.postalCode.type === "minLength"
-                        ? "Postal Code length is more than 1"
-                        : "Postal Code is required"
+                        ? "Please fill in some info"
+                        : "Please fill in some info"
                       : ""
                   }
                   {...field}
@@ -216,8 +216,8 @@ export default function Shipping() {
                   helperText={
                     errors.country
                       ? errors.country.type === "minLength"
-                        ? "Country length is more than 1"
-                        : "Country is required"
+                        ? "Please enter your Year Group"
+                        : "Please enter your Year Group"
                       : ""
                   }
                   {...field}
