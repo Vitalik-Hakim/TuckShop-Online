@@ -63,7 +63,8 @@ export default function Login() {
               defaultValue=""
               rules={{
                 required: true,
-                pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                pattern:
+                  /^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@soshgic.edu.gh$/,
               }}
               render={({ field }) => (
                 <TextField
@@ -71,14 +72,14 @@ export default function Login() {
                   fullWidth
                   id="email"
                   label="Email"
-                  inputProps={{ type: 'email' }}
+                  inputProps={{ type: "email" }}
                   error={Boolean(errors.email)}
                   helperText={
                     errors.email
-                      ? errors.email.type === 'pattern'
-                        ? 'Email is not valid'
-                        : 'Email is required'
-                      : ''
+                      ? errors.email.type === "pattern"
+                        ? "Please use your school Email"
+                        : "Email is required"
+                      : ""
                   }
                   {...field}
                 ></TextField>
@@ -100,14 +101,14 @@ export default function Login() {
                   fullWidth
                   id="password"
                   label="Password"
-                  inputProps={{ type: 'password' }}
+                  inputProps={{ type: "password" }}
                   error={Boolean(errors.password)}
                   helperText={
                     errors.password
-                      ? errors.password.type === 'minLength'
-                        ? 'Password length is more than 5'
-                        : 'Password is required'
-                      : ''
+                      ? errors.password.type === "minLength"
+                        ? "Password length is more than 5"
+                        : "Password is required"
+                      : ""
                   }
                   {...field}
                 ></TextField>
@@ -121,7 +122,7 @@ export default function Login() {
           </ListItem>
           <ListItem>
             Don&apos;t have an account? &nbsp;
-            <NextLink href={`/register?redirect=${redirect || '/'}`} passHref>
+            <NextLink href={`/register?redirect=${redirect || "/"}`} passHref>
               <Link>Register</Link>
             </NextLink>
           </ListItem>
