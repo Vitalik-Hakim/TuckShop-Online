@@ -19,7 +19,6 @@ import {
   Card,
   List,
   ListItem,
-  Box,
 } from '@mui/material';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -64,7 +63,7 @@ function reducer(state, action) {
 
 function Order({ params }) {
   const orderId = params.id;
-  const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+  const [ paypalDispatch] = usePayPalScriptReducer();
 
   const router = useRouter();
   const { state } = useContext(Store);
@@ -139,42 +138,42 @@ function Order({ params }) {
   }, [order, successPay, successDeliver]);
   const { enqueueSnackbar } = useSnackbar();
 
-  function createOrder(data, actions) {
-    return actions.order
-      .create({
-        purchase_units: [
-          {
-            amount: { value: totalPrice },
-          },
-        ],
-      })
-      .then((orderID) => {
-        return orderID;
-      });
-  }
-  function onApprove(data, actions) {
-    return actions.order.capture().then(async function (details) {
-      try {
-        dispatch({ type: 'PAY_REQUEST' });
-        const { data } = await axios.put(
-          `/api/orders/${order._id}/pay`,
-          details,
-          {
-            headers: { authorization: `Bearer ${userInfo.token}` },
-          }
-        );
-        dispatch({ type: 'PAY_SUCCESS', payload: data });
-        enqueueSnackbar('Order is paid', { variant: 'success' });
-      } catch (err) {
-        dispatch({ type: 'PAY_FAIL', payload: getError(err) });
-        enqueueSnackbar(getError(err), { variant: 'error' });
-      }
-    });
-  }
+  // function createOrder(data, actions) {
+  //   return actions.order
+  //     .create({
+  //       purchase_units: [
+  //         {
+  //           amount: { value: totalPrice },
+  //         },
+  //       ],
+  //     })
+  //     .then((orderID) => {
+  //       return orderID;
+  //     });
+  // }
+  // function onApprove(data, actions) {
+  //   return actions.order.capture().then(async function (details) {
+  //     try {
+  //       dispatch({ type: 'PAY_REQUEST' });
+  //       const { data } = await axios.put(
+  //         `/api/orders/${order._id}/pay`,
+  //         details,
+  //         {
+  //           headers: { authorization: `Bearer ${userInfo.token}` },
+  //         }
+  //       );
+  //       dispatch({ type: 'PAY_SUCCESS', payload: data });
+  //       enqueueSnackbar('Order is paid', { variant: 'success' });
+  //     } catch (err) {
+  //       dispatch({ type: 'PAY_FAIL', payload: getError(err) });
+  //       enqueueSnackbar(getError(err), { variant: 'error' });
+  //     }
+  //   });
+  // }
 
-  function onError(err) {
-    enqueueSnackbar(getError(err), { variant: 'error' });
-  }
+  // function onError(err) {
+  //   enqueueSnackbar(getError(err), { variant: 'error' });
+  // }
 
   async function deliverOrderHandler() {
     try {
