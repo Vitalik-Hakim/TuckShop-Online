@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-require("dotenv").config();
 const connection = {};
 
 async function connect() {
