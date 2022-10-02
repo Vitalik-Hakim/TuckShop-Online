@@ -14,9 +14,7 @@ async function connect() {
     }
     await mongoose.disconnect();
   }
-  const db = await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-  });
+  const db = await mongoose.connect(process.env.MONGODB_URI, {});
   console.log("new connection");
   connection.isConnected = db.connections[0].readyState;
 }
@@ -24,7 +22,7 @@ async function connect() {
 async function disconnect() {
   if (connection.isConnected) {
     if (process.env.NODE_ENV === "production") {
-      await mongoose.disconnect();
+      // await mongoose.disconnect();
       connection.isConnected = false;
     } else {
       console.log("not disconnected");
