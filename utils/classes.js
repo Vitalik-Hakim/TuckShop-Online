@@ -30,7 +30,7 @@ const classes = {
     minHeight: "80vh",
   },
   footer: {
-    marginTop: 1,
+    marginTop: 5,
     textAlign: "center",
   },
   section: {
@@ -42,7 +42,7 @@ const classes = {
     backgroundColor: "#203040",
     "& a": {
       color: "#ffffff",
-      marginLeft: 1,
+      marginLeft: 8,
     },
   },
   toolbar: {
@@ -66,6 +66,7 @@ const classes = {
 
   searchForm: {
     border: "1px solid #ffffff",
+    borderRadius: "15px  15px 15px 15px",
     backgroundColor: "#ffffff",
     borderRadius: 1,
   },
